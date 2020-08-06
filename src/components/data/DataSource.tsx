@@ -1,5 +1,5 @@
 import React, { useState, useEffect, ReactChild, ReactChildren } from "react";
-
+import { useData } from "./DataProvider";
 interface DataSourceProps {
   children: ReactChild | ReactChildren;
 }
@@ -25,6 +25,7 @@ function DataSource({ children }: DataSourceProps) {
     const data = await response.json();
     setData(data.data);
   };
+  useData();
   return React.cloneElement(children as React.ReactElement<any>, {
     data: data,
     setQuery: setQuery,
