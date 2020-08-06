@@ -1,10 +1,12 @@
 import React from "react";
 import { RouteComponentProps } from "react-router-dom";
+import DataSource from "../data/DataSource";
+import HomeContainer from "../HomeContainer";
 function Home(props: RouteComponentProps) {
   return (
-    <div>
-      <h1>Hello</h1>
-    </div>
+    <DataSource>
+      <HomeContainer />
+    </DataSource>
   );
 }
 
